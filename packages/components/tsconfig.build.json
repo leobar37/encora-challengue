@@ -1,0 +1,17 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src"],
+  "exclude": [
+    "src/**/*.stories.tsx",
+    "src/**/*.test.tsx",
+    "node_modules",
+    "rollup.config.ts"
+  ],
+  "compilerOptions": {
+    "noEmit": false,
+    "emitDeclarationOnly": true,
+    "declaration": true,
+    "outDir": "dist/types",
+    "customConditions": ["source"]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "lib": ["DOM", "ESNext"],
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleDetection": "force",
+    "allowJs": true,
+    // Bundler mode
+    "moduleResolution": "Bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "noEmit": true,
+    "customConditions": ["source"],
+    // JSX
+    "jsx": "react-jsx",
+    // Best practices
+    "strict": true,
+    "skipLibCheck": true,
+    "noUnusedParameters": true,
+    "types": ["node"]
+  }
+}

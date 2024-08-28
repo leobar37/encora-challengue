@@ -1,0 +1,8 @@
+{
+  "extends": "../../tsconfig.json",
+  "include": ["src", "rollup.config.ts", "./src/**/*.ts", "./src/**/*.tsx"],
+  "compilerOptions": {
+    "customConditions": ["source"],
+    "jsx": "react-jsx"
+  }
+}

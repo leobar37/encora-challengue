@@ -1,0 +1,54 @@
+{
+  "name": "@myorg/components",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/cjs/index.cjs",
+  "module": "dist/esm/index.mjs",
+  "sideEffects": false,
+  "types": "dist/types/index.d.ts",
+  "scripts": {
+    "build": "pnpm compi --types",
+    "compi": "pnpm exec tsx rollup.config.ts",
+    "dev": "pnpm compi --watch --types"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@chakra-ui/react": "2.5.5",
+    "@emotion/react": "11.10.6",
+    "@emotion/styled": "11.10.6",
+    "framer-motion": "10.12.4",
+    "react": "18.2.0",
+    "typescript": "5.0.4"
+  },
+  "devDependencies": {
+    "@rollup/plugin-alias": "^5.1.0",
+    "@rollup/plugin-commonjs": "^26.0.1",
+    "@rollup/plugin-json": "^6.1.0",
+    "@rollup/plugin-node-resolve": "^15.2.3",
+    "@rollup/plugin-replace": "^5.0.7",
+    "@types/node": "18.15.11",
+    "@types/react": "18.0.37",
+    "execa": "^9.3.1",
+    "fast-glob": "^3.3.2",
+    "rollup": "^4.20.0",
+    "rollup-plugin-dts": "^6.1.1",
+    "rollup-plugin-esbuild": "^6.1.1",
+    "rollup-plugin-preserve-directives": "^0.4.0"
+  },
+  "exports": {
+    ".": {
+      "import": {
+        "source": "./src/index.ts",
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    },
+    "./package.json": "./package.json"
+  }
+}
