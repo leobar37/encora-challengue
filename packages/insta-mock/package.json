@@ -5,8 +5,9 @@
   "main": "index.js",
   "sideEffects": false,
   "scripts": {
-    "dev": "tsup --env.NODE_ENV=development",
-    "build": "tsup --env.NODE_ENV=production"
+    "build:fast": "npx tsx ../../scripts/build/index.ts",
+    "build": "pnpm run build:fast --clean",
+    "dev": "pnpm run build:fast --watch"
   },
   "keywords": [],
   "author": "",

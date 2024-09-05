@@ -1,21 +1,47 @@
 {
   "compilerOptions": {
+    // includes types for DOM APIs like document and window
+    // ESNEXT includes all ECMAScript features that are currently available
     "lib": ["DOM", "ESNext"],
+    // target is the version of ECMAScript that the code will be compiled to
     "target": "ESNext",
+    // module is the module format that the code will be compiled to
     "module": "ESNext",
+    // treats all files as modules, regardless of the presence of "import" or "export" statements
     "moduleDetection": "force",
+    // allows for the use of ECMAScript import and export syntax
     "allowJs": true,
-    // Bundler mode
+
+    ////// Bundler mode
+
+    // moduleResolution is the strategy the compiler uses to resolve module names
     "moduleResolution": "Bundler",
+    // allows importing modules that are defined in .ts files
     "allowImportingTsExtensions": true,
+    // ensure that import/export syntax is preserved exactly as written in the source files
+    // this is important when working with modern bundlers or tools that rely on preserving the original module syntax
+    // for tree-shaking and other optimizations
     "verbatimModuleSyntax": true,
+    // prevents typescript from emitting any output files (i.e no 'js' files are generated)
     "noEmit": true,
+    // adds custom conditions form module resolution
+    // A condition that might be used by a bundler or enviroment to resolve specific files, often used with
+    // modern ECMAScript module configurations or package.json "exports" fields in package.json
     "customConditions": ["source"],
-    // JSX
+
+    /////////// JSX
+    // this used the new JSX transform that is available in React 17. it provides several optimizations, such as not needing
+    // to import React in every file that uses JSX
     "jsx": "react-jsx",
     // Best practices
+    // enables all strict type checking options in TypeScript. This is a best practice for catching potential
+    // errors early and enforcing type safety
     "strict": true,
+    // Skips type checking of all declaration files (*.d.ts). This can speed up the compilation process
+    // specially when working with many third-party libraries
     "skipLibCheck": true,
+    // Reports an error if a function parameter is declared but no used. This helps mantain clean code and
+    // avoid having unused parameters in functions
     "noUnusedParameters": true,
     "types": ["node"]
   }

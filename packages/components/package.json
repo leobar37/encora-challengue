@@ -7,9 +7,9 @@
   "sideEffects": false,
   "types": "dist/types/index.d.ts",
   "scripts": {
-    "build": "pnpm compi --types",
-    "compi": "pnpm exec tsx rollup.config.ts",
-    "dev": "pnpm compi --watch --types"
+    "build:fast": "npx tsx ../../scripts/build/index.ts",
+    "dev": "pnpm run build:fast --watch",
+    "build": "pnpm run build:fast --clean"
   },
   "keywords": [],
   "author": "",
@@ -22,31 +22,18 @@
     "react": "18.2.0",
     "typescript": "5.0.4"
   },
-  "devDependencies": {
-    "@rollup/plugin-alias": "^5.1.0",
-    "@rollup/plugin-commonjs": "^26.0.1",
-    "@rollup/plugin-json": "^6.1.0",
-    "@rollup/plugin-node-resolve": "^15.2.3",
-    "@rollup/plugin-replace": "^5.0.7",
-    "@types/node": "18.15.11",
-    "@types/react": "18.0.37",
-    "execa": "^9.3.1",
-    "fast-glob": "^3.3.2",
-    "rollup": "^4.20.0",
-    "rollup-plugin-dts": "^6.1.1",
-    "rollup-plugin-esbuild": "^6.1.1",
-    "rollup-plugin-preserve-directives": "^0.4.0"
-  },
+  "devDependencies": {},
   "exports": {
     ".": {
       "import": {
         "source": "./src/index.ts",
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.mjs"
+        "default": "./dist/esm/index.js"
       },
       "require": {
+        "source": "./src/index.ts",
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.cjs"
+        "default": "./dist/cjs/index.cjs"
       }
     },
     "./package.json": "./package.json"

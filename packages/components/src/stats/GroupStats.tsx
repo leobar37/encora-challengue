@@ -1,8 +1,9 @@
 import { Divider, HStack } from "@chakra-ui/react";
 import { Children, Fragment } from "react";
 import type { ReactNode, FC } from "react";
-type GroupStatsProps = {
-  children: ReactNode;
+
+export type GroupStatsProps = {
+  children?: ReactNode;
 };
 
 export const GroupStats: FC<GroupStatsProps> = ({ children }) => {

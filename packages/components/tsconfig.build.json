@@ -12,6 +12,7 @@
     "emitDeclarationOnly": true,
     "declaration": true,
     "outDir": "dist/types",
-    "customConditions": ["source"]
+    "customConditions": ["source"],
+    "jsx": "react-jsx"
   }
 }
