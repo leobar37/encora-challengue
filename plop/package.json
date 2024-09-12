@@ -1,0 +1,23 @@
+{
+  "name": "gen-code",
+  "version": "1.0.0",
+  "description": "Your project description",
+  "main": "index.js",
+  "bin": {
+    "gen-code": "./dist/index.js"
+  },
+  "scripts": {
+    "start": "node dist/index.js",
+    "build": "tsup"
+  },
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "plop": "^4.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "18.15.11",
+    "tsup": "^8.2.4",
+    "typescript": "5.0.4"
+  }
+}

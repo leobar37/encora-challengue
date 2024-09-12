@@ -1,8 +1,6 @@
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import esbuild from "rollup-plugin-esbuild";
-
 import replace from "@rollup/plugin-replace";
-
 import glob from "fast-glob";
 import { rmSync } from "fs";
 import { resolve } from "node:path/posix";

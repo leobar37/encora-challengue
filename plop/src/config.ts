@@ -1,4 +1,4 @@
-import { NodePlopAPI } from "plop";
+import type { NodePlopAPI } from "plop";
 
 export default function (plop: NodePlopAPI) {
   plop.setGenerator("component", {
@@ -18,7 +18,7 @@ export default function (plop: NodePlopAPI) {
     ],
   });
   plop.setGenerator("p2d", {
-    description: "Create a new component pd2",
+    description: "Create a new component pd3",
     prompts: [
       {
         type: "input",

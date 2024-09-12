@@ -1,4 +1,8 @@
 {
   "extends": ["./tsconfig.build.json"],
-  "include": ["packages"]
+  "include": ["packages"],
+  "compilerOptions": {
+    "types": ["node"],
+    "verbatimModuleSyntax": true
+  }
 }

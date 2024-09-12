@@ -1,27 +1,36 @@
 import alias from "@rollup/plugin-alias";
 import { nodeResolve } from "@rollup/plugin-node-resolve";
 import replace from "@rollup/plugin-replace";
+import commonjs from "@rollup/plugin-commonjs";
 import { resolve } from "node:path/posix";
+import json from "@rollup/plugin-json";
 import type { Plugin, RollupOptions } from "rollup";
 import esbuild from "rollup-plugin-esbuild";
 
 export type Options = {
   dir: string;
 };
+
 export const getConfig = async (options: Options): Promise<RollupOptions> => {
   const { dir } = options;
   const cwd = process.cwd();
   const pkg = await import(resolve(cwd, "package.json"));
 
+  const isCli = !!pkg?.bin;
+
   const plugins: Plugin[] = [
     nodeResolve({
       extensions: [".js", ".jsx", ".ts", ".tsx"],
+      preferBuiltins: true,
     }),
+    commonjs({
+      ignore: ["readable-stream", "glob"],
+    }),
+    json(),
     alias({}),
     esbuild({
-      sourceMap: true,
+      sourceMap: !isCli,
       tsconfig: resolve(dir, "tsconfig.json"),
-      platform: "browser",
     }),
     replace({
       preventAssignment: true,
